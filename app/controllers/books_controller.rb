@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update]
 
   def show
     @book = Book.find(params[:id])
@@ -39,7 +40,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to book_path(@book), notice: "You have updated book successfully."
     else
-      render "show"
+      render "edit"
     end
   end
 

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy#アソシエーション
   #has_manとbelongs_to :userはセット,userの中のbooks　dependent: :destroyはセット(userが消えた場合booksも消える)
+  has_many :favorites, dependent: :destroy#いいね機能と関連付けする
+  has_many :book_comments, dependent: :destroy#コメント機能(book_comments)と関連付け
   has_one_attached :profile_image
 
 

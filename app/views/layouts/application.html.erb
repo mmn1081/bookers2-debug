@@ -14,11 +14,12 @@
     <%= render partial: "layouts/header" %>
       <main class="mb-auto">
 
+       <%= render partial: "searches/serach" %>
       <p id="notice">
        <%= flash[:notice] %>
       </p>
-
        <%= yield %>
+
     </main>
     <%= render partial: 'layouts/footer' %>
   </body>
